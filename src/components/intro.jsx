@@ -46,9 +46,6 @@ const Intro = ({ id }) => {
             <Typography variant="body1">
               Experience the unique blend of mobility and coffee craftsmanship
             </Typography>
-            <Typography variant="body1">
-              From private events to nationwide journeys, join us on our caffeinated adventure
-            </Typography>
           </div>
         </div>
         <div style={styles.buttonContainer}>

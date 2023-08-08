@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Paper, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import './AboutStyles.css'; // Import your custom styles
+import './AboutStyles.css'; 
 import Grid from '@mui/material/Grid';
-import '../index.css'
+import '../index.css';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
-  padding: theme.spacing(2), // Increase padding for more space within the cards
+  padding: theme.spacing(2), 
   textAlign: 'center',
   color: theme.palette.text.secondary,
   elevation: 20,
@@ -15,7 +15,7 @@ const Item = styled(Paper)(({ theme }) => ({
   borderRadius: 10,
   backgroundColor: 'rgba(255, 255, 255, 0.55)',
   backdropFilter: 'blur(5px)',
-  transition: 'transform 0.3s', // Add a smooth transition effect
+  transition: 'transform 0.3s, opacity 0.3s', // Add transition for opacity
 }));
 
 const About = ({ id }) => {
@@ -29,33 +29,59 @@ const About = ({ id }) => {
     setHoveredIndex(null);
   };
 
+  const cardContents = [
+    {
+      title: 'Our Coffee',
+      content: 'Experience the rich flavors and aromas of our carefully sourced coffee beans.',
+    },
+    {
+      title: 'What We Do',
+      content: 'We travel around the UK serving the tastiest coffee in the most beautiful places. Come and find us by following our calendar or hire us for a private event!',
+    },
+    {
+      title: 'Our Story',
+      content: 'Learn about our journey and commitment to delivering the finest coffee since 2023.',
+    },
+  ];
+
   return (
-    <section id={ id } className="about" style={{ paddingTop: '50px', paddingBottom: '50px', backgroundColor: 'rgba(10, 15, 10, 1)'}}>
-      {/* Added padding to the top and bottom of the section */}
+    <section
+      id={id}
+      className="about"
+      style={{
+        paddingTop: '50px',
+        paddingBottom: '50px',
+        backgroundColor: 'rgba(10, 15, 10, 1)',
+      }}
+    >
       <Grid
         container
         justifyContent="center"
-        spacing={3} // Adjust spacing between cards
+        spacing={3}
         sx={{
           position: 'relative',
           p: { xs: 10 },
-          mb: { xs: 5 }, // Added margin-bottom to add space below cards
+          mb: { xs: 5 },
           height: '75vh',
         }}
       >
-        {[0, 1, 2].map((index) => (
+        {cardContents.map((card, index) => (
           <Grid item xs={4} key={index}>
             <Item
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
               style={{
-                transform: hoveredIndex === index ? 'scale(1.05)' : 'scale(1)', // Grow on mouse over
+                transform:
+                  hoveredIndex === index
+                    ? 'scale(1.1)'
+                    : hoveredIndex !== null
+                    ? 'scale(0.95)'
+                    : 'scale(1)',
+                opacity: hoveredIndex === null || hoveredIndex === index ? 1 : 0.8, // Adjust opacity
               }}
             >
-              <Typography variant="h5">Card Title</Typography>
-              <Typography variant="body1">
-                Card content goes here.
-              </Typography>
+              <Typography variant="h5">{card.title}</Typography>
+              <Typography variant="body1">{card.content}</Typography>
             </Item>
           </Grid>
         ))}
