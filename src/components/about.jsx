@@ -7,7 +7,7 @@ import '../index.css';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
-  padding: theme.spacing(2), 
+  padding: theme.spacing(4), 
   textAlign: 'center',
   color: theme.palette.text.secondary,
   elevation: 20,
@@ -57,7 +57,7 @@ const About = ({ id }) => {
       <Grid
         container
         justifyContent="center"
-        spacing={3}
+        spacing={4}
         sx={{
           position: 'relative',
           p: { xs: 10 },
@@ -80,7 +80,7 @@ const About = ({ id }) => {
                 opacity: hoveredIndex === null || hoveredIndex === index ? 1 : 0.8, // Adjust opacity
               }}
             >
-              <Typography variant="h5">{card.title}</Typography>
+              <Typography variant="h4" sx={{mb:{xs:5}}}>{card.title}</Typography>
               <Typography variant="body1">{card.content}</Typography>
             </Item>
           </Grid>

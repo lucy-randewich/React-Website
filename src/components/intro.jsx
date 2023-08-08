@@ -1,8 +1,7 @@
 import React from 'react';
 import { Paper, Typography, Button } from '@mui/material';
 import Image from '../images/backdrop.jpeg';
-import '../index.css'
-
+import '../index.css';
 
 const styles = {
   paperContainer: {
@@ -22,7 +21,7 @@ const styles = {
     padding: '20px',
     borderRadius: '10px',
     marginTop: '80px',
-    marginBottom: '40px', 
+    marginBottom: '40px',
   },
   description: {
     marginTop: '50px',
@@ -39,6 +38,9 @@ const Intro = ({ id }) => {
       <Paper style={styles.paperContainer}>
         <div style={styles.textContainer}>
           <Typography variant="h2">Rover Roasts</Typography>
+          <Typography variant="subtitle1" gutterBottom>
+            Independent Coffee Co
+          </Typography>
           <div style={styles.description}>
             <Typography variant="body1">
               Serving the finest coffee from the back of a Defender
@@ -49,26 +51,30 @@ const Intro = ({ id }) => {
           </div>
         </div>
         <div style={styles.buttonContainer}>
-          <Button variant="contained"
-          sx={{
-            ":hover": {
-              transition: 'background-color 0.3s, color 0.3s, transform 0.3s',
-              backgroundColor: 'rgba(255, 255, 255, 0.5)',
-              color: '#000',
-              transform: 'scale(1.05)',
-            },
-            backgroundColor: 'transparent',
-            color: '#fff',
-            border: '2px solid #fff',
-            borderRadius: '4px',
-            padding: '10px 20px',
-            textTransform: 'uppercase',
-            fontWeight: 'bold',
-          }} >Hire Us Now</Button>
+          <Button
+            variant="contained"
+            sx={{
+              ":hover": {
+                transition: 'background-color 0.3s, color 0.3s, transform 0.3s',
+                backgroundColor: 'rgba(255, 255, 255, 0.5)',
+                color: '#000',
+                transform: 'scale(1.05)',
+              },
+              backgroundColor: 'transparent',
+              color: '#fff',
+              border: '2px solid #fff',
+              borderRadius: '4px',
+              padding: '10px 20px',
+              textTransform: 'uppercase',
+              fontWeight: 'bold',
+            }}
+          >
+            Hire Us Now
+          </Button>
         </div>
       </Paper>
     </section>
   );
-}
+};
 
 export default Intro;
