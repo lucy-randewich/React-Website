@@ -1,4 +1,4 @@
-# React-Website
+## About this project
 Website for a mock coffee company called Rover Roasts. I built this site as a challenge to learn React in under two hours - the result of this challenge can be seen in the initial commit of this repository. I plan to learn more and built upon it to make it more pretty and interactive!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
