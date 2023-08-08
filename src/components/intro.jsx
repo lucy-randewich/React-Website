@@ -3,6 +3,7 @@ import { Paper, Typography, Button } from '@mui/material';
 import Image from '../images/backdrop.jpeg';
 import '../index.css'
 
+
 const styles = {
   paperContainer: {
     minHeight: '100vh',
@@ -30,15 +31,6 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
   },
-  hireButton: {
-    backgroundColor: 'transparent',
-    color: '#fff',
-    border: '2px solid #fff',
-    borderRadius: '5px',
-    padding: '10px 20px',
-    textTransform: 'uppercase',
-    fontWeight: 'bold',
-  },
 };
 
 const Intro = () => {
@@ -59,7 +51,22 @@ const Intro = () => {
         </div>
       </div>
       <div style={styles.buttonContainer}>
-        <Button style={styles.hireButton}>Hire Us Now</Button>
+        <Button variant="contained"
+        sx={{
+          ":hover": {
+            transition: 'background-color 0.3s, color 0.3s, transform 0.3s',
+            backgroundColor: 'rgba(255, 255, 255, 0.5)',
+            color: '#000',
+            transform: 'scale(1.05)',
+          },
+          backgroundColor: 'transparent',
+          color: '#fff',
+          border: '2px solid #fff',
+          borderRadius: '4px',
+          padding: '10px 20px',
+          textTransform: 'uppercase',
+          fontWeight: 'bold',
+        }} >Hire Us Now</Button>
       </div>
     </Paper>
   );
