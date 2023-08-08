@@ -1,0 +1,24 @@
+
+body {
+  margin: 0;
+  font-family: 'TypoSquareBold', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+@font-face {
+  font-family: 'TypoSquareBold'; /* Choose a name for your font */
+  src: url('./typo-square-font/TypoSquareBoldDemo-JMwo.ttf') format('truetype');
+  /* You may also include other font formats (woff, woff2, etc.) for better browser compatibility */
+}
+
+/* Apply the custom font to the entire website */
+body {
+   /* Use the font-family you defined */
+}
