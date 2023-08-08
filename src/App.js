@@ -27,10 +27,10 @@ function App() {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Header />
-        <Intro />
-        <About/>
-        <Contact />
+        <Header id='header'/>
+        <Intro id='intro'/>
+        <About id='about'/>
+        <Contact id='contact'/>
       </ThemeProvider>
     </div>
   );

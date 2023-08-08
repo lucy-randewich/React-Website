@@ -25,9 +25,9 @@ const styles = {
   },
 };
 
-const Contact = () => {
+const Contact = ({ id }) => {
   return (
-    <div style={{backgroundColor: 'rgba(10, 15, 10, 1)'}}>
+    <div id={ id } style={{backgroundColor: 'rgba(10, 15, 10, 1)'}}>
       <Container style={styles.contactContainer}>
         <Typography variant="h4">Contact Us</Typography>
         <Typography variant="body1">

@@ -18,7 +18,7 @@ const Item = styled(Paper)(({ theme }) => ({
   transition: 'transform 0.3s', // Add a smooth transition effect
 }));
 
-const About = () => {
+const About = ({ id }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const handleMouseEnter = (index) => {
@@ -30,7 +30,7 @@ const About = () => {
   };
 
   return (
-    <section className="about" style={{ paddingTop: '50px', paddingBottom: '50px', backgroundColor: 'rgba(10, 15, 10, 1)'}}>
+    <section id={ id } className="about" style={{ paddingTop: '50px', paddingBottom: '50px', backgroundColor: 'rgba(10, 15, 10, 1)'}}>
       {/* Added padding to the top and bottom of the section */}
       <Grid
         container

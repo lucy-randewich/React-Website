@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
-import '../index.css'
+import '../index.css';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -20,6 +20,17 @@ const Header = () => {
     };
   }, []);
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    console.log("SECTION ID IS ")
+    console.log(sectionId)
+    console.log(section)
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      console.log("scrolling")
+    }
+  };
+
   return (
     <AppBar
       position="fixed"
@@ -34,13 +45,21 @@ const Header = () => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Rover Roasts
         </Typography>
-        <Button color="inherit" href="/">Home</Button>
-        <Button color="inherit" href="/about">About Us</Button>
-        <Button color="inherit" href="/menu">Book</Button>
-        <Button color="inherit" href="/contact">Contact</Button>
+        <Button color="inherit" onClick={() => scrollToSection('intro')}>
+          Home
+        </Button>
+        <Button color="inherit" onClick={() => scrollToSection('about')}>
+          About Us
+        </Button>
+        <Button color="inherit" onClick={() => scrollToSection('book')}>
+          Book
+        </Button>
+        <Button color="inherit" onClick={() => scrollToSection('contact')}>
+          Contact
+        </Button>
       </Toolbar>
     </AppBar>
   );
-}
+};
 
 export default Header;
