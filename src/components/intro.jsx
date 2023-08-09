@@ -1,6 +1,7 @@
 import React from 'react';
 import { Paper, Typography, Button } from '@mui/material';
 import Image from '../images/backdrop.jpeg';
+import Logo from '../images/whitelogo.png';
 import '../index.css';
 
 const styles = {
@@ -18,17 +19,17 @@ const styles = {
   },
   textContainer: {
     textAlign: 'center',
-    padding: '20px',
     borderRadius: '10px',
-    marginTop: '80px',
-    marginBottom: '40px',
-  },
-  description: {
-    marginTop: '50px',
+    marginTop: '110px',
   },
   buttonContainer: {
     display: 'flex',
     justifyContent: 'center',
+  },
+  logoImage: {
+    width: '60%',
+    marginBottom: '10px',
+    opacity: '0.7',
   },
 };
 
@@ -37,18 +38,11 @@ const Intro = ({ id }) => {
     <section id={id}>
       <Paper style={styles.paperContainer}>
         <div style={styles.textContainer}>
-          <Typography variant="h2">Rover Roasts</Typography>
-          <Typography variant="subtitle1" gutterBottom>
-            Independent Coffee Co
-          </Typography>
-          <div style={styles.description}>
-            <Typography variant="body1">
-              Serving the finest coffee from the back of a Defender
-            </Typography>
-            <Typography variant="body1">
-              Experience the unique blend of mobility and coffee craftsmanship
-            </Typography>
-          </div>
+          <img
+            src={Logo}
+            alt="Coffee Co Logo"
+            style={styles.logoImage}
+          />
         </div>
         <div style={styles.buttonContainer}>
           <Button
