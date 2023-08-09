@@ -46,13 +46,13 @@ const Intro = ({ id }) => {
     buttonContainer: {
       display: 'flex',
       justifyContent: 'center',
-      opacity: scrolled ? '0.3' : '1',
+      opacity: scrolled ? '0.2' : '1',
       transition: 'opacity 0.8s',
     },
     logoImage: {
       width: '60%',
       marginBottom: '10px',
-      opacity: scrolled ? '0.3' : '0.7',
+      opacity: scrolled ? '0.2' : '0.7',
       transition: 'opacity 0.8s',
     },
   };
