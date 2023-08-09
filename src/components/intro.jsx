@@ -3,6 +3,7 @@ import { Paper, Button } from '@mui/material';
 import Image from '../images/backdrop.jpeg';
 import Logo from '../images/whitelogo.png';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
+import { KeyboardArrowDown } from '@mui/icons-material';
 import '../index.css';
 
 
@@ -55,6 +56,17 @@ const Intro = ({ id }) => {
       opacity: scrolled ? '0.2' : '0.7',
       transition: 'opacity 0.8s',
     },
+    arrowIcon: {
+      position: 'absolute',
+      left: '50%',
+      marginTop: '130px',
+      transform: 'translateX(-50%)',
+      fontSize: '2rem',
+      color: '#fff',
+      opacity: scrolled ? '0.05' : '0.4',
+      transition: 'opacity 0.8s',
+    },
+    
   };
 
   return (
@@ -93,7 +105,11 @@ const Intro = ({ id }) => {
             >
               Hire Us Now
             </Button>
+            
           </div>
+
+          <KeyboardArrowDown style={styles.arrowIcon} />
+          
           </Parallax>
           </ParallaxProvider>
         </Paper>
