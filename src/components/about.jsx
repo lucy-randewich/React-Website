@@ -77,10 +77,19 @@ const About = ({ id }) => {
                     : hoveredIndex !== null
                     ? 'scale(0.95)'
                     : 'scale(1)',
-                opacity: hoveredIndex === null || hoveredIndex === index ? 1 : 0.8, // Adjust opacity
+                opacity: hoveredIndex === null || hoveredIndex === index ? 1 : 0.8,
               }}
             >
-              <Typography variant="h4" sx={{mb:{xs:5}}}>{card.title}</Typography>
+              <Typography
+                variant="h4"
+                sx={{
+                  mb: { xs: 5 },
+                  textDecoration: hoveredIndex === index ? 'underline' : 'none',
+                  color: hoveredIndex === index ? 'orange' : 'inherit',
+                }}
+              >
+                {card.title}
+              </Typography>
               <Typography variant="body1">{card.content}</Typography>
             </Item>
           </Grid>

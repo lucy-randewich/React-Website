@@ -18,7 +18,13 @@ code {
   /* You may also include other font formats (woff, woff2, etc.) for better browser compatibility */
 }
 
-/* Apply the custom font to the entire website */
-body {
-   /* Use the font-family you defined */
-}
+/* .parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url('./images/backdrop.jpeg') center/cover no-repeat; 
+  will-change: transform; 
+} */

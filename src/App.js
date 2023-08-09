@@ -3,6 +3,7 @@ import Header from './components/header';
 import Intro from './components/intro';
 import About from './components/about';
 import Contact from './components/contact';
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './index.css';
@@ -27,8 +28,15 @@ function App() {
   return (
     <div>
       <ThemeProvider theme={theme}>
+
         <Header id='header'/>
-        <Intro id='intro'/>
+
+        <ParallaxProvider scrollAxis='vertical'>
+        <Parallax translateY={[-15, 15]}>
+          <Intro id='intro'/>
+        </Parallax>
+        </ParallaxProvider>
+
         <About id='about'/>
         <Contact id='contact'/>
       </ThemeProvider>
