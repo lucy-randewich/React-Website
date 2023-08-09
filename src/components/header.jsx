@@ -22,12 +22,8 @@ const Header = () => {
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
-    console.log("SECTION ID IS ")
-    console.log(sectionId)
-    console.log(section)
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
-      console.log("scrolling")
     }
   };
 
@@ -41,22 +37,56 @@ const Header = () => {
         transition: 'background-color 0.4s',
       }}
     >
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1, marginLeft: '24px' }}>
           Rover Roasts
         </Typography>
-        <Button color="inherit" onClick={() => scrollToSection('intro')}>
-          Home
-        </Button>
-        <Button color="inherit" onClick={() => scrollToSection('about')}>
-          About Us
-        </Button>
-        <Button color="inherit" onClick={() => scrollToSection('book')}>
-          Book
-        </Button>
-        <Button color="inherit" onClick={() => scrollToSection('contact')}>
-          Contact
-        </Button>
+        <div>
+          <Button
+            color="inherit"
+            sx={{
+              '&:hover': {
+                color: 'orange',
+              },
+            }}
+            onClick={() => scrollToSection('intro')}
+          >
+            Home
+          </Button>
+          <Button
+            color="inherit"
+            sx={{
+              '&:hover': {
+                color: 'orange',
+              },
+            }}
+            onClick={() => scrollToSection('about')}
+          >
+            About Us
+          </Button>
+          <Button
+            color="inherit"
+            sx={{
+              '&:hover': {
+                color: 'orange',
+              },
+            }}
+            onClick={() => scrollToSection('book')}
+          >
+            Book
+          </Button>
+          <Button
+            color="inherit"
+            sx={{
+              '&:hover': {
+                color: 'orange',
+              },
+            }}
+            onClick={() => scrollToSection('contact')}
+          >
+            Contact
+          </Button>
+        </div>
       </Toolbar>
     </AppBar>
   );

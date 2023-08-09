@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper, Typography, Button } from '@mui/material';
+import { Paper, Button } from '@mui/material';
 import Image from '../images/backdrop.jpeg';
 import Logo from '../images/whitelogo.png';
 import '../index.css';
@@ -50,13 +50,14 @@ const Intro = ({ id }) => {
             sx={{
               ":hover": {
                 transition: 'background-color 0.3s, color 0.3s, transform 0.3s',
-                backgroundColor: 'rgba(255, 255, 255, 0.5)',
-                color: '#000',
-                transform: 'scale(1.05)',
+                border: '2px solid rgba(255, 255, 255, 0.95)',
+                backgroundColor: 'rgba(240, 152, 46, 0.6)',
+                color: 'rgba(255, 255, 255, 0.95)',
+                transform: 'scale(1.07)',
               },
               backgroundColor: 'transparent',
-              color: '#fff',
-              border: '2px solid #fff',
+              color: 'rgba(255, 255, 255, 0.5)',
+              border: '2px solid rgba(255, 255, 255, 0.6)',
               borderRadius: '4px',
               padding: '10px 20px',
               textTransform: 'uppercase',
