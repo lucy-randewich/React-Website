@@ -71,13 +71,14 @@ const About = ({ id }) => {
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
               style={{
+                backgroundColor: 'rgba(138, 122, 102, 0.85)',
                 transform:
                   hoveredIndex === index
                     ? 'scale(1.1)'
                     : hoveredIndex !== null
                     ? 'scale(0.95)'
                     : 'scale(1)',
-                opacity: hoveredIndex === null || hoveredIndex === index ? 1 : 0.8,
+                opacity: hoveredIndex === null || hoveredIndex === index ? 1 : 0.6,
               }}
             >
               <Typography

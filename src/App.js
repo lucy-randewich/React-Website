@@ -3,6 +3,7 @@ import Header from './components/header';
 import Intro from './components/intro';
 import About from './components/about';
 import Contact from './components/contact';
+import Gallery from './components/gallery';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -38,7 +39,9 @@ function App() {
         </ParallaxProvider>
 
         <About id='about'/>
+        <Gallery id='gallery'/>
         <Contact id='contact'/>
+        
       </ThemeProvider>
     </div>
   );
