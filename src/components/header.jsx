@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import Logo from '../images/whitelogo.png'; // Import your logo image
 import '../index.css';
 
 const Header = () => {
@@ -32,7 +33,7 @@ const Header = () => {
       position="fixed"
       sx={{
         top: 0,
-        height: scrolled ? '70px' : '80px', 
+        height: scrolled ? '70px' : '80px',
         backgroundColor: scrolled ? 'rgba(0, 0, 0, 0.7)' : 'rgba(0, 0, 0, 0.2)',
         backdropFilter: 'blur(2px)',
         transition: 'background-color 0.4s, height 0.4s',
@@ -46,9 +47,25 @@ const Header = () => {
           alignItems: 'center',
         }}
       >
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1, marginLeft: '24px' }}>
-          Rover Roasts
-        </Typography>
+        <div
+  style={{
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'column', // Stack elements in the z-axis
+    alignItems: 'center', // Center elements horizontally
+  }}
+>
+  <img
+    src={Logo}
+    alt="Coffee Co Logo"
+    style={{
+      width: '180px',
+      height: 'auto',
+      opacity: 1,
+      transition: 'opacity 0.4s',
+    }}
+  />
+</div>
         <div>
           <Button
             color="inherit"
