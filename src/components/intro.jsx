@@ -1,40 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Paper, Button } from '@mui/material';
 import Image from '../images/backdrop.jpeg';
 import Logo from '../images/whitelogo.png';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 import '../index.css';
 
-const styles = {
-  paperContainer: {
-    minHeight: '100vh',
-    position: 'relative',
-    background: `
-      linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)),
-      url(${Image}) center/cover no-repeat`,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: '#fff',
-  },
-  textContainer: {
-    textAlign: 'center',
-    borderRadius: '10px',
-    marginTop: '110px',
-  },
-  buttonContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
-  logoImage: {
-    width: '60%',
-    marginBottom: '10px',
-    opacity: '0.7',
-  },
-};
 
 const Intro = ({ id }) => {
+
+  const [scrolled, setScrolled] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const styles = {
+    paperContainer: {
+      minHeight: '100vh',
+      position: 'relative',
+      background: `
+        linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)),
+        url(${Image}) center/cover no-repeat`,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      color: '#fff',
+    },
+    logoContainer: {
+      textAlign: 'center',
+      borderRadius: '10px',
+      marginTop: '110px',
+    },
+    buttonContainer: {
+      display: 'flex',
+      justifyContent: 'center',
+      opacity: scrolled ? '0.3' : '1',
+      transition: 'opacity 0.8s',
+    },
+    logoImage: {
+      width: '60%',
+      marginBottom: '10px',
+      opacity: scrolled ? '0.3' : '0.7',
+      transition: 'opacity 0.8s',
+    },
+  };
+
   return (
     <section id={id}>
       
@@ -42,7 +64,7 @@ const Intro = ({ id }) => {
 
         <ParallaxProvider scrollAxis='vertical'>
         <Parallax translateY={[-15, 15]}>
-          <div style={styles.textContainer}>
+          <div style={styles.logoContainer}>
             <img
               src={Logo}
               alt="Coffee Co Logo"
