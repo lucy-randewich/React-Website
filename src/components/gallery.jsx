@@ -1,17 +1,17 @@
 import React from 'react';
 import { Container, Paper, Typography } from '@mui/material';
-import Image from '../images/backdrop.jpeg';
+import Coffee from '../images/coffee.jpeg';
 
 const galleryData = [
   {
-    imageUrl: Image,
+    imageUrl: Coffee,
     title: 'Coffee Delights',
-    description: 'Indulge in the rich flavors of our handcrafted coffees.',
+    description: 'Indulge in the rich flavors of our handcrafted coffees',
   },
   {
-    imageUrl: Image,
+    imageUrl: Coffee,
     title: 'Cozy Atmosphere',
-    description: 'Experience the warmth and comfort of our coffee shop.',
+    description: 'Experience the warmth and comfort of our coffee shop',
   },
 ];
 
@@ -43,8 +43,8 @@ const Gallery = () => {
           <Paper style={paperStyle} key={index}>
             <img src={item.imageUrl} style={imageStyle} alt={`Gallery Item ${index}`} />
             <div>
-              <Typography variant="h6" sx={{color: 'white', width:'50vw', maxWidth: '50vw', marginLeft: '130px'}} >{item.title}</Typography>
-              <Typography variant="body1" sx={{color: 'white', width:'50vw', maxWidth: '50vw', marginLeft: '130px'}} >{item.description}</Typography>
+              <Typography variant="h6" sx={{color: 'white', width:'50vw', maxWidth: '50vw', textAlign:'center'}} >{item.title}</Typography>
+              <Typography variant="body1" sx={{color: 'white', width:'50vw', maxWidth: '50vw', textAlign:'center'}} >{item.description}</Typography>
             </div>
           </Paper>
         ))}
