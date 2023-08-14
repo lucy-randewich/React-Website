@@ -17,7 +17,7 @@ const galleryData = [
 
 const Gallery = () => {
   const galleryContainerStyle = {
-    backgroundColor: 'rgba(138, 122, 102, 0.8)',
+    backgroundColor: 'rgba(10, 15, 10, 1)',
     display: 'flex',
     overflowX: 'scroll',
     scrollBehavior: 'smooth',
@@ -25,7 +25,7 @@ const Gallery = () => {
   };
 
   const paperStyle = {
-    backgroundColor: 'rgba(138, 122, 102, 0.8)',
+    backgroundColor: 'rgba(255, 255, 255, 0.55)',
     width: '100%',
     display: 'flex',
     alignItems: 'center',
@@ -33,7 +33,7 @@ const Gallery = () => {
 
   const imageStyle = {
     height: '50vh', 
-    width: '50vw', // Set width to auto so image retains its aspect ratio
+    width: '50vw',
   };
 
   return (
